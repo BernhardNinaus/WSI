@@ -66,6 +66,7 @@ Es wird ein einfacher JS-Client geschrieben um den Kommentarservice zu verwenden
      - Nur bestimmte Tags und Attribute?
  - Suchfunktion um alle Kommtare unter einer Ressource zu finden.
   - Verwendung bei Forum-Service
+ - Löschung/Bearbeitung diese Kommentars mit weiterer Guid.
 
 ### Image-Service
  - Presist or TTL
