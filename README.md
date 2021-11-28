@@ -17,13 +17,13 @@ Das Projekt kann ein beliebiges Thema behandeln. Sie könnten zum Beispiel Servi
 
  3. - [ ] Beschreiben Sie die OpenAPI-Spec Ihres Service. Stellen Sie IDL, WSDL und OpenApi-Spec gegenüber.
 
- 4. - [ ] Erstellen Sie eine Service-Klasse, welche per Dependency Injection aus Ihrem Service aufgerufen wird.
+ 4. - [X] Erstellen Sie eine Service-Klasse, welche per Dependency Injection aus Ihrem Service aufgerufen wird.
 
  5. - [ ] Erstellen Sie eine Client-Applikation, welche Ihr erstelltes Service verwendet. Die Technologie bleibt dabei Ihnen überlassen (C#-Console-App, Java, JavaScript, Python,..).
 
  6. - [ ] Beschreiben Sie das Thema Routing im Allgemeinen. Definieren Sie mindestesn eine Route, welche nicht dem ASP.NET Core-Standard entspricht
 
- 7. - [ ] Verwenden Sie Einträge aus der „appsettings.json“.
+ 7. - [X] Verwenden Sie Einträge aus der „appsettings.json“.
    
  8. - [ ] Aufbereitung und Präsentation
 
