@@ -7,7 +7,7 @@ Ziel der Projektarbeit im Rahmen dieser Vorlesung ist es, eine moderne, flexibel
 Das Projekt kann ein beliebiges Thema behandeln. Sie könnten zum Beispiel Services für einen Kinobetreiber implmentieren oder auch Services im Zusammenahng mit „Betrieb einer Fachhochschule“ erstellen.
 
 ### Focus
-> Microservices a definition of this new architectural term
+> Microservices a definition of this new architectural term  
 > http://martinfowler.com/articles/microservices.html
 
 ### Aufgaben
@@ -28,6 +28,10 @@ Das Projekt kann ein beliebiges Thema behandeln. Sie könnten zum Beispiel Servi
  8. - [ ] Aufbereitung und Präsentation
 
  9. - [ ] Funktionierende Gesamtlösung
+
+ 10. - [ ] Entwickeln Sie einen weiteren ASP.NET Core Web.API  Controller, bei welchem die einzelnen Methoden (GET, POST, PUT,DELETE) nur mit einem gültigen API Key aufgerufen werden dürfen. Demonstrieren Sie sowohl das Verhalten bei Verwendung eines gültigen API Keys als auch das Verhalten bei Verwendung eines falschen API Keys. Vergleichen Sie den Einsatz von API Keys mit OAuth und beschreiben Sie mögliche Anwendungsszenarien und Vor- und Nachteile
+
+Aufgabe eins bis neun geben jeweils 10 Punkte, die zehnte Aufgabe gibt 20 Punkt.
 
 ## Projekt definition
 
