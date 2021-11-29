@@ -108,7 +108,18 @@ Diese zwei Routen beschreiben, wie man die z.B. von einem Staat von einem Kontin
 
  > Implementierung und Antwort
 
+### Verhalten mit API Key
+
+Wenn der richtige API Key übergeben wird, dann führt der Server den Service aus und man bekommt verscheidene Status-Codes zurück wie z.B.:
+ * Ok, wenn die Resource angelegt wurde
+ * NoContent, wenn die Resource gelöscht wurde oder ein Update erfolgte
+ * ...
+
+Sollte jedoch der flasche Key übergeben werden sein, dann wird die Funktionalität abgebrochen und ein Status-Code 405 "Method not Allowed" wird zurückgegeben.
+
 ### Vor- und Nachteile von API-Keys zu OAuth
+
+API-Keys werden hauptsächlich verwendet wenn zwei Maschinen miteinander Kommunizieren. OAuth kann zwar die gleichen Ergebnisse wie ein einfacher API Key erreichen, jedoch kann nur OAuth den User über bestimmte Berechtigung fragen und die Ressource freigeben.
 
 Vorteile:
  * Einfach zu erstellen und zu verwenden
