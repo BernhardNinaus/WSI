@@ -11,7 +11,7 @@ Das Projekt kann ein beliebiges Thema behandeln. Sie könnten zum Beispiel Servi
 > http://martinfowler.com/articles/microservices.html
 
 ### Aufgaben
- 1. - [ ] Beschreiben Sie mindestens 3 Services inkl. Bounded Context, Context Map, Datenmodel und Datenvalidierung
+ 1. - [X] Beschreiben Sie mindestens 3 Services inkl. Bounded Context, Context Map, Datenmodel und Datenvalidierung
 
  2. - [ ] Entwicklen Sie mindestens einen ASP.NET Core Web.API  Controller, welcher CRUD-Funktionaltitäten zur Verfügung stellt. Beschreiben Sie die REST-Prinzipien im Zusammenhang mit Ihrem Projekt.
 
@@ -21,7 +21,7 @@ Das Projekt kann ein beliebiges Thema behandeln. Sie könnten zum Beispiel Servi
 
  5. - [ ] Erstellen Sie eine Client-Applikation, welche Ihr erstelltes Service verwendet. Die Technologie bleibt dabei Ihnen überlassen (C#-Console-App, Java, JavaScript, Python,..).
 
- 6. - [ ] Beschreiben Sie das Thema Routing im Allgemeinen. Definieren Sie mindestesn eine Route, welche nicht dem ASP.NET Core-Standard entspricht
+ 6. - [X] Beschreiben Sie das Thema Routing im Allgemeinen. Definieren Sie mindestesn eine Route, welche nicht dem ASP.NET Core-Standard entspricht
 
  7. - [X] Verwenden Sie Einträge aus der „appsettings.json“.
    
@@ -46,9 +46,8 @@ In diesem Projekt wird ein Services erstellt und zwei weiterere werden erklärt.
    - In diesem Service können Bilder gesichert werden.
    - Die Bilder werden auf Inhalt überprüft und sind dann in verschiedenen Größer aufrufbar.
      - Inhaltüberprüfung wird vielleicht später mit AI/ML implementiert.
- - Kommunikations-Service (=Forum) (nur Beschreibung)
-   - In diesem Service werden Themen Kategorisiert. Beiträge werden im Kommentar-Service gespeichert.
-   - Es kann das Forum durchsucht werden um ein gewünschten Thread zu finden.
+ - Translation-Service (nur Beschreibung)
+   - In diesem Service werden Sätze von einer zu einer andere übersetzt.
 
 Es wird ein einfacher JS-Client geschrieben um den Kommentarservice zu verwenden.
 
