@@ -19,15 +19,15 @@ Das Projekt kann ein beliebiges Thema behandeln. Sie könnten zum Beispiel Servi
 
  4. - [X] Erstellen Sie eine Service-Klasse, welche per Dependency Injection aus Ihrem Service aufgerufen wird.
 
- 5. - [ ] Erstellen Sie eine Client-Applikation, welche Ihr erstelltes Service verwendet. Die Technologie bleibt dabei Ihnen überlassen (C#-Console-App, Java, JavaScript, Python,..).
+ 5. - [X] Erstellen Sie eine Client-Applikation, welche Ihr erstelltes Service verwendet. Die Technologie bleibt dabei Ihnen überlassen (C#-Console-App, Java, JavaScript, Python,..).
 
  6. - [X] Beschreiben Sie das Thema Routing im Allgemeinen. Definieren Sie mindestesn eine Route, welche nicht dem ASP.NET Core-Standard entspricht
 
  7. - [X] Verwenden Sie Einträge aus der „appsettings.json“.
    
- 8. - [ ] Aufbereitung und Präsentation
+ 8. - [X] Aufbereitung und Präsentation
 
- 9. - [ ] Funktionierende Gesamtlösung
+ 9. - [X] Funktionierende Gesamtlösung
 
  10. - [X] Entwickeln Sie einen weiteren ASP.NET Core Web.API  Controller, bei welchem die einzelnen Methoden (GET, POST, PUT,DELETE) nur mit einem gültigen API Key aufgerufen werden dürfen. Demonstrieren Sie sowohl das Verhalten bei Verwendung eines gültigen API Keys als auch das Verhalten bei Verwendung eines falschen API Keys. Vergleichen Sie den Einsatz von API Keys mit OAuth und beschreiben Sie mögliche Anwendungsszenarien und Vor- und Nachteile
 

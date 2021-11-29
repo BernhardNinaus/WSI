@@ -20,6 +20,8 @@ public class KommentarController : ControllerBase {
     [ProducesResponseType(typeof(KommentarModel), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     public async Task<ActionResult<KommentarModel>> Get(Guid id) {
+        Console.WriteLine($"Get Kommentar: {id.ToString()}");
+
         var kommentar = await _dataContext.Kommentare
             .Include(k => k.WeitereKommentare)!.ThenInclude(k => k.WeitereKommentare)!.ThenInclude(k => k.WeitereKommentare)
             .FirstOrDefaultAsync(f => f.Id == id);
@@ -37,6 +39,7 @@ public class KommentarController : ControllerBase {
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status409Conflict)]
     public async Task<ActionResult<KommentarModel>> Post([FromBody] KommentarPOSTModel kommentar) {
+        Console.WriteLine($"Neuer Kommentar: {kommentar.Id}");
         var kommentarNeu = kommentar.ZuKommentar();
 
         if (_dataContext.Kommentare.Any(f => f.Id == kommentarNeu.Id)) {
@@ -53,6 +56,8 @@ public class KommentarController : ControllerBase {
             kommentarNeu.KopfId = übergeordnetKommentar.KopfId;
         }
 
+        Console.WriteLine($"Neuer Kommentar Saved");
+
         await _dataContext.Kommentare.AddAsync(kommentarNeu);
         await _dataContext.SaveChangesAsync();
 
@@ -64,6 +69,8 @@ public class KommentarController : ControllerBase {
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status405MethodNotAllowed)]
     public async Task<IActionResult> Put([FromBody] KommentarPUTModel kommentar) {
+        Console.WriteLine($"Update Kommentar: {kommentar.Id}");
+
         var saved = await _dataContext.Kommentare
             .AsTracking()
             .FirstOrDefaultAsync(f => f.Id == kommentar.Id);
@@ -76,6 +83,8 @@ public class KommentarController : ControllerBase {
             return StatusCode(405);
         }
 
+
+        Console.WriteLine($"Updated");
         saved.Update(kommentar);
         await _dataContext.SaveChangesAsync();
 
@@ -87,6 +96,7 @@ public class KommentarController : ControllerBase {
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status405MethodNotAllowed)]
     public async Task<IActionResult> Delete([FromBody] KommentarDELETEModel kommentar) {
+        Console.WriteLine($"Delete Kommentar: {kommentar.Id}");
         var saved = await _dataContext.Kommentare
             .AsTracking()
             .Include(i => i.WeitereKommentare)

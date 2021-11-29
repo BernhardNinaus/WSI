@@ -5,6 +5,15 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Cosnole",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/WSI.ConsoleTest/bin/Debug/net6.0/WSI.ConsoleTest.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+        },
+        {
             "name": ".NET Core Launch (web)",
             "type": "coreclr",
             "request": "launch",
