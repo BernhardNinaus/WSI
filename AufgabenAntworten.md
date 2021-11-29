@@ -1,4 +1,4 @@
-# Aufgaben Antowerten
+# Aufgaben Antworten
 
 ## 1. Beschreiben Sie mindestens 3 Services inkl. Bounded Context, Context Map, Datenmodel und Datenvalidierung
 
@@ -21,16 +21,22 @@ Zu einem Kommentar gehört:
  * Lese-Berechtigungs-Schlüssel: Um ein Kommentar auch "geheim" zu halten. Es können nur User mit Kommentar-Id und LeseSchlüssel darauf zugreifen.
  * SchreibSchlüssel: Damit nur eine Person diese Kommentar bearbeiten und löschen kann.
 
+<br>
+
 ### Serivce 2: Image-Service
 
 Im Image-Service werden nur Bilder gespeichert, diese werdne auf Inhalt überprüft, damit kein ungewünschter Inhalt im WWW verbreitet wird. Der Serive kann auch das Bild in verscheiden Größer transformieren und Thumbnails, Icon und anderes Dateiformat erstellen.
 
 Hier gibt es kein Datenmodel. Die Valdierung und Bearbeitung des Bildes passiert mit einer Library.
 
+<br>
+
 ### Service 3: Translation-Service
 
 Diese Service ist zuständig um einen Text in eine andere gewünschte Sprache zu übersetzten.  
 Es gibt kein Datnemodel da nur eine Textdatei zur übersetzung gesendet wird. Die Datenvalidierung wird mit dem Routing und einer Tabelle mit allen verfügbaren sprachen gemacht. Die tatsächliche Übersetzung passiert mit eine externen Programm und KI.
+
+<br>
 
 ### Bounded Context
 
@@ -54,9 +60,13 @@ Durch diese Mikroservices kann dieses Forum sehr gut skalieren.
 
 Der Kommentarservice muss nichts von Bilder wissen und auch nicht verstehen, wie dieses Kommentar in einer anderen Sprache aussieht.
 
+<br><br>
+
 ## 2. Entwicklen Sie mindestens einen ASP.NET Core Web.API  Controller, welcher CRUD-Funktionaltitäten zur Verfügung stellt. Beschreiben Sie die REST-Prinzipien im Zusammenhang mit Ihrem Projekt.
 
 [Controller](./WSI.KommentarService/Controllers/KommentarController.cs)
+
+<br><br>
 
 ## 3. Beschreiben Sie die OpenAPI-Spec Ihres Service. Stellen Sie IDL, WSDL und OpenApi-Spec gegenüber.
 
@@ -75,13 +85,19 @@ Unter Paths sind alle Endpunkte und deren Rout-Values beschrieben. Eine Ebene da
  * requestBody: Hier wird beschrieben welche Datenformat verwendbar sind und es wird zu den "components" welche Daten im Request-Body enthalten sein müssen.
  * response: Beschreibt den Status-Code und referenziert wiederum zu "components" um Datenformat zu definieren.
 
+<br><br>
+
 ## 4. Erstellen Sie eine Service-Klasse, welche per Dependency Injection aus Ihrem Service aufgerufen wird.
 
 [Service-Registirierung](./WSI.WortFilter/ExtensionIServiceCollection.cs)
 
+<br><br>
+
 ## 5. Erstellen Sie eine Client-Applikation, welche Ihr erstelltes Service verwendet. Die Technologie bleibt dabei Ihnen überlassen (C#-Console-App, Java, JavaScript, Python,..).
 
- > Implementierung
+[Client Applikation](./WSI.ConsoleTest/Program.cs)
+
+<br><br>
 
 ## 6. Beschreiben Sie das Thema Routing im Allgemeinen. Definieren Sie mindestesn eine Route, welche nicht dem ASP.NET Core-Standard entspricht
 
@@ -92,17 +108,25 @@ Beispiel:
  * /api/v1.0/{kontinent}/{staat}/Corona/{provinz}/Inzidenz
 Diese zwei Routen beschreiben, wie man die z.B. von einem Staat von einem Kontinent die Anzahl der Einwohner bekommt und die Aktuellen Inzidenz-Zahlen einer bestimmten Provinz
 
+<br><br>
+
 ## 7. Verwenden Sie Einträge aus der „appsettings.json“.
 
 [WSI.KommentarService/Program.cs:17](./WSI.KommentarService/Program.cs#L17)
+
+<br><br>
 
 ## 8. Aufbereitung und Präsentation
 
  > Präsentation
 
+<br><br>
+
 ## 9. Funktionierende Gesamtlösung
 
- > Implementierung
+ > Funktioniert
+
+<br><br>
 
 ## 10. Entwickeln Sie einen weiteren ASP.NET Core Web.API  Controller, bei welchem die einzelnen Methoden (GET, POST, PUT,DELETE) nur mit einem gültigen API Key aufgerufen werden dürfen. Demonstrieren Sie sowohl das Verhalten bei Verwendung eines gültigen API Keys als auch das Verhalten bei Verwendung eines falschen API Keys. Vergleichen Sie den Einsatz von API Keys mit OAuth und beschreiben Sie mögliche Anwendungsszenarien und Vor- und Nachteile
 
