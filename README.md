@@ -13,7 +13,7 @@ Das Projekt kann ein beliebiges Thema behandeln. Sie könnten zum Beispiel Servi
 ### Aufgaben
  1. - [X] Beschreiben Sie mindestens 3 Services inkl. Bounded Context, Context Map, Datenmodel und Datenvalidierung
 
- 2. - [ ] Entwicklen Sie mindestens einen ASP.NET Core Web.API  Controller, welcher CRUD-Funktionaltitäten zur Verfügung stellt. Beschreiben Sie die REST-Prinzipien im Zusammenhang mit Ihrem Projekt.
+ 2. - [X] Entwicklen Sie mindestens einen ASP.NET Core Web.API  Controller, welcher CRUD-Funktionaltitäten zur Verfügung stellt. Beschreiben Sie die REST-Prinzipien im Zusammenhang mit Ihrem Projekt.
 
  3. - [ ] Beschreiben Sie die OpenAPI-Spec Ihres Service. Stellen Sie IDL, WSDL und OpenApi-Spec gegenüber.
 
