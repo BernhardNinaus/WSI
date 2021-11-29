@@ -33,42 +33,6 @@ Das Projekt kann ein beliebiges Thema behandeln. Sie könnten zum Beispiel Servi
 
 Aufgabe eins bis neun geben jeweils 10 Punkte, die zehnte Aufgabe gibt 20 Punkt.
 
-## Projekt definition
+## Aufgabe Antworten
 
-In diesem Projekt wird ein Services erstellt und zwei weiterere werden erklärt.
- - Kommentar-Service (wird umgesetzt)
-   - In diesem Service können Kommentare-Funktionen in verschiedenster Art und Weise verwendet werden.
-   - Diese Kommentare werden zu externen Ressource oder zu anderen Kommentaren gespeichert.
-   - Die Kommentare werden auf Inhalt überprüft.
-     - Inhaltüberprüfung wird vielleicht später mit AI/ML implementiert.
-   - Dieseer Service wird nur minmal umgesetzt, weitere Funktionen werden vielleicht einmal umgesetzt.
- - Image-Service (nur Beschreibung)
-   - In diesem Service können Bilder gesichert werden.
-   - Die Bilder werden auf Inhalt überprüft und sind dann in verschiedenen Größer aufrufbar.
-     - Inhaltüberprüfung wird vielleicht später mit AI/ML implementiert.
- - Translation-Service (nur Beschreibung)
-   - In diesem Service werden Sätze von einer zu einer andere übersetzt.
-
-Es wird ein einfacher JS-Client geschrieben um den Kommentarservice zu verwenden.
-
-
-## Ideen zu den Services
-
-### Kommentar-Service
- - Nur als Erstellen/Lesen/Löschen
- - Reddit like Kommentieren oder nur chronologisch
- - Maximallänge
- - Verschiedene Formate (Rich, Text, Html, Md)
-   - Automatische konvertierung
-   - XSS?
-   - HTML
-     - Nur bestimmte Tags und Attribute?
- - Suchfunktion um alle Kommtare unter einer Ressource zu finden.
-  - Verwendung bei Forum-Service
- - Löschung/Bearbeitung diese Kommentars mit weiterer Guid.
-
-### Image-Service
- - Presist or TTL
- - Konvertieren in verschiedene Größen/Formaten
-   - Thumbnail
- - CDN-Funktionalität um anderen Service zu verwenden
+[AufgabenAntworten.md](./AufgabenAntworten.md)
