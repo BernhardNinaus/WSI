@@ -56,7 +56,7 @@ Der Kommentarservice muss nichts von Bilder wissen und auch nicht verstehen, wie
 
 ## 2. Entwicklen Sie mindestens einen ASP.NET Core Web.API  Controller, welcher CRUD-Funktionaltitäten zur Verfügung stellt. Beschreiben Sie die REST-Prinzipien im Zusammenhang mit Ihrem Projekt.
 
- > Implementierung
+[Controller](./WSI.KommentarService/Controllers/KommentarController.cs)
 
 ## 3. Beschreiben Sie die OpenAPI-Spec Ihres Service. Stellen Sie IDL, WSDL und OpenApi-Spec gegenüber.
 
@@ -77,7 +77,7 @@ Unter Paths sind alle Endpunkte und deren Rout-Values beschrieben. Eine Ebene da
 
 ## 4. Erstellen Sie eine Service-Klasse, welche per Dependency Injection aus Ihrem Service aufgerufen wird.
 
- > Implementierung
+[Service-Registirierung](./WSI.WortFilter/ExtensionIServiceCollection.cs)
 
 ## 5. Erstellen Sie eine Client-Applikation, welche Ihr erstelltes Service verwendet. Die Technologie bleibt dabei Ihnen überlassen (C#-Console-App, Java, JavaScript, Python,..).
 
@@ -94,7 +94,7 @@ Diese zwei Routen beschreiben, wie man die z.B. von einem Staat von einem Kontin
 
 ## 7. Verwenden Sie Einträge aus der „appsettings.json“.
 
- > Implementierung
+[WSI.KommentarService/Program.cs:17](./WSI.KommentarService/Program.cs#L17)
 
 ## 8. Aufbereitung und Präsentation
 
@@ -106,7 +106,7 @@ Diese zwei Routen beschreiben, wie man die z.B. von einem Staat von einem Kontin
 
 ## 10. Entwickeln Sie einen weiteren ASP.NET Core Web.API  Controller, bei welchem die einzelnen Methoden (GET, POST, PUT,DELETE) nur mit einem gültigen API Key aufgerufen werden dürfen. Demonstrieren Sie sowohl das Verhalten bei Verwendung eines gültigen API Keys als auch das Verhalten bei Verwendung eines falschen API Keys. Vergleichen Sie den Einsatz von API Keys mit OAuth und beschreiben Sie mögliche Anwendungsszenarien und Vor- und Nachteile
 
- > Implementierung und Antwort
+[API Key Controller](./WSI.KommentarService/Controllers/Aufgabe10Controller.cs)
 
 ### Verhalten mit API Key
 
