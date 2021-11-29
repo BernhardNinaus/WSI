@@ -1,0 +1,448 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+      "title": "WSI.KommentarService",
+      "version": "1.0"
+    },
+    "paths": {
+      "/v1.0/Kommentar/{id}": {
+        "get": {
+          "tags": [
+            "Kommentar"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/KommentarModel"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/KommentarModel"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/KommentarModel"
+                  }
+                }
+              }
+            },
+            "204": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/v1.0/Kommentar": {
+        "post": {
+          "tags": [
+            "Kommentar"
+          ],
+          "reaquestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KommentarPOSTModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KommentarPOSTModel"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KommentarPOSTModel"
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/KommentarModel"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/KommentarModel"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/KommentarModel"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Bad Request",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "409": {
+              "description": "Conflict",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "put": {
+          "tags": [
+            "Kommentar"
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KommentarPUTModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KommentarPUTModel"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KommentarPUTModel"
+                }
+              }
+            }
+          },
+          "responses": {
+            "204": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "Bad Request",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "405": {
+              "description": "Method Not Allowed",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "delete": {
+          "tags": [
+            "Kommentar"
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KommentarDELETEModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KommentarDELETEModel"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KommentarDELETEModel"
+                }
+              }
+            }
+          },
+          "responses": {
+            "204": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "Bad Request",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "405": {
+              "description": "Method Not Allowed",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "KommentarDELETEModel": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "schreibSchlüssel": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          "additionalProperties": false
+        },
+        "KommentarModel": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "title": {
+              "type": "string",
+              "nullable": true
+            },
+            "name": {
+              "type": "string",
+              "nullable": true
+            },
+            "kommentar": {
+              "type": "string",
+              "nullable": true
+            },
+            "erstellt": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "bearbeitet": {
+              "type": "string",
+              "format": "date-time",
+              "nullable": true
+            },
+            "letzteÄnderung": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "weitereKommentareErlauben": {
+              "type": "boolean"
+            },
+            "anzahlKommentar": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "maximalKomentarlänge": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "gelöscht": {
+              "type": "boolean"
+            },
+            "kopfId": {
+              "type": "string",
+              "format": "uuid",
+              "nullable": true
+            },
+            "übergeordneterKommentarId": {
+              "type": "string",
+              "format": "uuid",
+              "nullable": true
+            },
+            "weitereKommentare": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/KommentarModel"
+              },
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "KommentarPOSTModel": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "format": "uuid",
+              "nullable": true
+            },
+            "title": {
+              "type": "string",
+              "nullable": true
+            },
+            "name": {
+              "type": "string",
+              "nullable": true
+            },
+            "kommentar": {
+              "type": "string",
+              "nullable": true
+            },
+            "weitereKommentareErlauben": {
+              "type": "boolean"
+            },
+            "maximalKomentarlänge": {
+              "maximum": 10000,
+              "minimum": 50,
+              "type": "integer",
+              "format": "int32"
+            },
+            "übergeordneterKommentarId": {
+              "type": "string",
+              "format": "uuid",
+              "nullable": true
+            },
+            "schreibSchlüssel": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          "additionalProperties": false
+        },
+        "KommentarPUTModel": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "schreibSchlüssel": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "kommentar": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "ProblemDetails": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "nullable": true
+            },
+            "title": {
+              "type": "string",
+              "nullable": true
+            },
+            "status": {
+              "type": "integer",
+              "format": "int32",
+              "nullable": true
+            },
+            "detail": {
+              "type": "string",
+              "nullable": true
+            },
+            "instance": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          "additionalProperties": { }
+        }
+      }
+    }
+  }

@@ -15,7 +15,7 @@ Das Projekt kann ein beliebiges Thema behandeln. Sie könnten zum Beispiel Servi
 
  2. - [X] Entwicklen Sie mindestens einen ASP.NET Core Web.API  Controller, welcher CRUD-Funktionaltitäten zur Verfügung stellt. Beschreiben Sie die REST-Prinzipien im Zusammenhang mit Ihrem Projekt.
 
- 3. - [ ] Beschreiben Sie die OpenAPI-Spec Ihres Service. Stellen Sie IDL, WSDL und OpenApi-Spec gegenüber.
+ 3. - [X] Beschreiben Sie die OpenAPI-Spec Ihres Service. Stellen Sie IDL, WSDL und OpenApi-Spec gegenüber.
 
  4. - [X] Erstellen Sie eine Service-Klasse, welche per Dependency Injection aus Ihrem Service aufgerufen wird.
 

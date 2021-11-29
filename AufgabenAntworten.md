@@ -60,6 +60,21 @@ Der Kommentarservice muss nichts von Bilder wissen und auch nicht verstehen, wie
 
 ## 3. Beschreiben Sie die OpenAPI-Spec Ihres Service. Stellen Sie IDL, WSDL und OpenApi-Spec gegenüber.
 
+### OpenAPI-Spec
+![Übersicht](./assets/openAPIOverview.png)
+
+ * openpi: Version
+ * Info: Information über Schnitstelle
+ * paths: Hier sind alle Endpunkte beschrieben, die Aufrufbar sind.
+ * components: Hier ist die Definition über die Datenmodelle die unter "paths" verwendet werden.
+
+
+![Paths](./assets/openAPIPaths.png)
+
+Unter Paths sind alle Endpunkte und deren Rout-Values beschrieben. Eine Ebene darunter werden die erlaubten HTTP-Methoden beschrieben.  
+ * requestBody: Hier wird beschrieben welche Datenformat verwendbar sind und es wird zu den "components" welche Daten im Request-Body enthalten sein müssen.
+ * response: Beschreibt den Status-Code und referenziert wiederum zu "components" um Datenformat zu definieren.
+
 ## 4. Erstellen Sie eine Service-Klasse, welche per Dependency Injection aus Ihrem Service aufgerufen wird.
 
  > Implementierung
