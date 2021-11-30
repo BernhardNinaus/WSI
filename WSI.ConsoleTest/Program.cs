@@ -8,10 +8,6 @@ var httpClient = new HttpClient() {
     BaseAddress = new Uri(server)
 };
 var apiPath = server + "/v1.0/Kommentar";
-Action<KommentarModel, int> logKommentar;
-
-logKommentar = (kom, i) => {
-};
 
 KommentarModel kommentar;
 
@@ -64,6 +60,7 @@ Console.WriteLine("");
 
 await httpClient.PostAsJsonAsync(apiPath, KommentarModel.Neu(Guid.NewGuid(), "", "Th", "Noch eins", top));
 await httpClient.PostAsJsonAsync(apiPath, KommentarModel.Neu(Guid.NewGuid(), "", "Th", "Noch zwei", top));
+await httpClient.PostAsJsonAsync(apiPath, KommentarModel.Neu(Guid.NewGuid(), "", "Th", "Böses Wort: '1te Wort'", top));
 
 
 kommentar = await httpClient.GetFromJsonAsync<KommentarModel>($"{apiPath}/{top}");
