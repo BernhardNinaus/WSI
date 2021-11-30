@@ -1,69 +1,40 @@
-﻿using System.Net.Http.Json;
-using System.Text;
-using Newtonsoft.Json;
-using WSI.ConsoleTest;
+﻿using WSI.ConsoleTest;
 
-var server = "http://localhost:5197";
-var httpClient = new HttpClient() {
-    BaseAddress = new Uri(server)
+var client = new HttpClient() {
+    BaseAddress = new Uri("http://localhost:5197")
 };
-var apiPath = server + "/v1.0/Kommentar";
 
-KommentarModel kommentar;
-
-var top = Guid.NewGuid();
+var top = Guid.NewGuid(); // 3 UUIDs erstellen damit diese dann auch Referenziert werden
 var mid = Guid.NewGuid();
 var bot = Guid.NewGuid();
 
-await httpClient.PostAsJsonAsync(apiPath, KommentarModel.Neu(top, "Titel", "Thomas", "Hallo, wie gehts?"));
-kommentar = await httpClient.GetFromJsonAsync<KommentarModel>($"{apiPath}/{top}");
-Console.WriteLine("Neu erstellt 1");
-kommentar.LogKommentar();
-Console.WriteLine("");
+KommentarModel kommentar;
 
+// Zuerst die drei Kommentare erstellen und ausgeben was erstellt wurde
+kommentar = await KommentarModel.Neu(client, top, "Titel", "Thomas", "Hallo, wie gehts?");
+Console.WriteLine($"Neu erstellt Top:\n{kommentar}\n");
 
-await httpClient.PostAsJsonAsync(apiPath, KommentarModel.Neu(mid, "", "Th", "Hab beim Kahoot alles richtig", top));
-kommentar = await httpClient.GetFromJsonAsync<KommentarModel>($"{apiPath}/{mid}");
-Console.WriteLine("Neu erstellt 2");
-kommentar.LogKommentar();
-Console.WriteLine("");
+kommentar = await KommentarModel.Neu(client, mid, "", "Th", "Hab beim Kahoot alles richtig", top);
+Console.WriteLine($"Neu erstellt Mid:\n{kommentar}\n");
 
+kommentar = await KommentarModel.Neu(client, bot, "", "Thomas", "Sehr gut!", mid);
+Console.WriteLine($"Neu erstellt Bot:\n{kommentar}\n");
 
-await httpClient.PostAsJsonAsync(apiPath, KommentarModel.Neu(bot, "", "Thomas", "Sehr gut!", mid));
-kommentar = await httpClient.GetFromJsonAsync<KommentarModel>($"{apiPath}/{bot}");
-Console.WriteLine("Neu erstellt 3");
-kommentar.LogKommentar();
-Console.WriteLine("");
+// Oberstes Kommentar ausgeben, es sind weitere Kommentare vorhanden,
+// diese werden jetzt auch ausgegeben.
+kommentar = await KommentarModel.GetById(client, top);
+Console.WriteLine($"Alle:\n{kommentar}\n");
 
+// Löschen des Mittleren Kommentars und anzeigen, dass es funtkioniert hat
+Console.WriteLine("Lösche mittleres Kommentar\n");
+await KommentarModel.DeleteById(client, mid);
+Console.WriteLine($"Alle:\n{await KommentarModel.GetById(client, top)}\n");
 
+// Weitere Kommentare und Top hinzufügen damit auch gesehen werden kann, 
+// dass auch mehrere Kommentare zu einem Kommentar gespeichert werden können.
+await KommentarModel.Neu(client, Guid.NewGuid(), "", "Th", "Noch eins", top);
+await KommentarModel.Neu(client, Guid.NewGuid(), "", "Th", "Noch zwei", top);
+await KommentarModel.Neu(client, Guid.NewGuid(), "", "Th", "Böses Wort: '1te Wort'", top);
 
-kommentar = await httpClient.GetFromJsonAsync<KommentarModel>($"{apiPath}/{top}");
-Console.WriteLine("Alle:");
-kommentar.LogKommentar();
-Console.WriteLine("");
-
-
-Console.WriteLine("Lösche mittleres Kommentar");
-var request = new HttpRequestMessage {
-    Method = HttpMethod.Delete,
-    RequestUri = new Uri("http://localhost:5197/v1.0/Kommentar"),
-    Content = new StringContent(JsonConvert.SerializeObject(new { id = mid, schreibSchlüssel = mid }), Encoding.UTF8, "application/json")
-};
-var response = await httpClient.SendAsync(request);
-
-
-kommentar = await httpClient.GetFromJsonAsync<KommentarModel>($"{apiPath}/{top}");
-Console.WriteLine("Alle:");
-kommentar.LogKommentar();
-Console.WriteLine("");
-
-
-await httpClient.PostAsJsonAsync(apiPath, KommentarModel.Neu(Guid.NewGuid(), "", "Th", "Noch eins", top));
-await httpClient.PostAsJsonAsync(apiPath, KommentarModel.Neu(Guid.NewGuid(), "", "Th", "Noch zwei", top));
-await httpClient.PostAsJsonAsync(apiPath, KommentarModel.Neu(Guid.NewGuid(), "", "Th", "Böses Wort: '1te Wort'", top));
-
-
-kommentar = await httpClient.GetFromJsonAsync<KommentarModel>($"{apiPath}/{top}");
-Console.WriteLine("Weite Kommentare in der Mitte:");
-kommentar.LogKommentar();
-Console.WriteLine("");
+kommentar = await KommentarModel.GetById(client, top);
+Console.WriteLine($"Weite Kommentare in der Mitte:\n{kommentar}\n");
