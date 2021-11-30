@@ -1,4 +1,5 @@
 using Microsoft.Extensions.DependencyInjection;
+
 namespace WSI.WortFilter;
 
 public class WortSucheServiceCollection {

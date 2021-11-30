@@ -1,5 +1,3 @@
-using System.ComponentModel.DataAnnotations;
-
 namespace WSI.KommentarService.Models;
 
 public class KommentarDELETEModel {

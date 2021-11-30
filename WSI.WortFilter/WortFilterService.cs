@@ -1,4 +1,5 @@
 using System.Text;
+
 namespace WSI.WortFilter;
 
 public abstract class WortFilterService<T1, T2> : IWortFilterService<T1, T2> 

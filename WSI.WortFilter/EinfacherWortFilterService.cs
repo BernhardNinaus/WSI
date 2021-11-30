@@ -1,4 +1,3 @@
-using System.Text;
 namespace WSI.WortFilter;
 
 public class EinfacherWortFilterService
